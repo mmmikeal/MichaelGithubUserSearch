@@ -10,7 +10,6 @@ class Search extends React.Component {
       githubHandle: '',
       followers: [''],
       followerCount: null,
-      showMoreButton: false,
       pagination: 1,
     };
     //  binds setState functions
@@ -53,13 +52,14 @@ class Search extends React.Component {
         githubHandle={this.state.githubHandle}
         pagination={this.state.pagination}
         setFollowers={this.setFollowers}
+        followerCount={this.state.followerCount}
       />
     ) : (
       <div />
     );
 
     return (
-      <div>
+      <div className="SearchSystem">
         <SearchBar
           setHandle={this.setHandle}
           setFollowers={this.setFollowers}

@@ -1,20 +1,20 @@
 import React from "react";
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 
 class AvatarImages extends React.Component {
+
   renderImage(imageUrl) {
     return (
-      <div>
-        <img src={imageUrl} />
+      <div className="AvatarImg">
+        <Image src={imageUrl} responsive rounded/>
       </div>
     );
   }
 
   render() {
     return (
-      <div>
-        <div>
-          {this.props.imageUrls.map(imageUrl => this.renderImage(imageUrl))}
-        </div>
+      <div className="AvatarContainer">
+        {this.props.imageUrls.map(imageUrl => this.renderImage(imageUrl))}
       </div>
     );
   }

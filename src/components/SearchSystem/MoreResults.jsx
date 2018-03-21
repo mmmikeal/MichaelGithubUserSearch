@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 class MoreResults extends React.Component {
   constructor(props) {
@@ -26,10 +27,10 @@ class MoreResults extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleSubmit}>
-          More Results
-        </button>
+      <div className="MoreButton">
+          <Button bsStyle="primary" onClick={this.handleSubmit}>
+            More Results ({this.props.followerCount-(this.props.pagination * 30)})
+          </Button>
       </div>
     );
   }

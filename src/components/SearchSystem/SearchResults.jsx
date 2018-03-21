@@ -5,9 +5,11 @@ import AvatarImages from './AvatarImages';
 const SearchResults = (props) => {
   return (
     <div>
-      <div> { props.handle } </div>
-      <div> { props.followerCount } </div>
-      <AvatarImages imageUrls={ props.followers } />
+      <h1> { props.handle } </h1>
+      <h2> { props.followerCount } </h2>
+      <div>
+        <AvatarImages imageUrls={ props.followers } />
+      </div>
     </div>
   );
 };
