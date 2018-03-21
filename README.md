@@ -1,3 +1,10 @@
+To launch:
+
+navigate within project repo and run `npm install` to install node dependencies, please ensure you have a version of npm/node on your machine.
+
+Run `npm start` to launch project to localhost
+
+
 All React code for this challenge can be found within /src/components/SearchSystem
 
 Component structure:
