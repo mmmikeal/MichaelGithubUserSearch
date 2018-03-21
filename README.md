@@ -12,9 +12,23 @@ Component structure:
                                       AvatarImages.jsx
 
 
+Future optimizations:
 
+- DRY: API requests in SearchBar and AvatarImages are same, we could potentially reorganize the component structure so that both those files look towards the same file to fire API requests, might minimize our code a small amount (may arguably make component structure less intuitive)
 
+- Unit Tests
 
+- CSS: Update title and follower count font, overlay to add some depth to page.
+
+- There may be some unused bootstrap files, can reduce bundle size by removing
+
+- Load state (add loading animation) to make API request feel more responsive. (I know how to do this quickly).
+
+- Alert for invalid username kind of annoying, I could set it to do nothing for now or a neat trick would be to Regex a bunch of strings til it returns something that works (could get banned from making too many requests).
+
+- Clear form after search (forgot)
+
+--------------------------------------------------------------------------
 
 
 

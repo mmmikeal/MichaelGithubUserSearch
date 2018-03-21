@@ -3,14 +3,15 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import MoreResults from './MoreResults';
 
+//  Top level search component
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      githubHandle: '',
-      followers: [''],
-      followerCount: null,
-      pagination: 1,
+      githubHandle: '', //  searched github handle
+      followers: [''],  //  array of followers [followerhandle, followerImg]
+      followerCount: null, // # of followers
+      pagination: 1,  //  current page if more than 30 followers
     };
     //  binds setState functions
     this.setHandle = this.setHandle.bind(this);
@@ -30,9 +31,9 @@ class Search extends React.Component {
     this.setState({ followers: val });
   }
 
-  // new search set pagination to 1
-  resetPagination() {
-    this.setState({ pagination: 1 });
+  // set followerCount to result of APi data
+  setFollowerCount(val) {
+    this.setState({ followerCount: val });
   }
 
   //  increment pagination by 1
@@ -40,9 +41,9 @@ class Search extends React.Component {
     this.setState({ pagination: this.state.pagination + 1 });
   }
 
-  // set followerCount to result of APi data
-  setFollowerCount(val) {
-    this.setState({ followerCount: val });
+  // new search set pagination to 1
+  resetPagination() {
+    this.setState({ pagination: 1 });
   }
 
   render() {
@@ -71,6 +72,10 @@ class Search extends React.Component {
           handle={this.state.githubHandle}
           followers={this.state.followers}
           followerCount={this.state.followerCount}
+          setHandle={this.setHandle}
+          setFollowers={this.setFollowers}
+          resetPagination={this.resetPagination}
+          setFollowerCount={this.setFollowerCount}
         />
         {showMoreButton}
       </div>

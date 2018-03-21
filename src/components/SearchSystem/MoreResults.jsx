@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
+// More Results Button to show next set of followers avatars
 class MoreResults extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ class MoreResults extends React.Component {
       .then((results) => {
         let arrResults = JSON.parse(results);
         arrResults = arrResults.map((obj) => {
-          return obj.avatar_url;
+          return [obj.login, obj.avatar_url];
         });
         this.props.setFollowers(arrResults);
       });

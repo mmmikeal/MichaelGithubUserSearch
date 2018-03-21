@@ -1,13 +1,14 @@
 import React from 'react';
 import { FormGroup, FormControl,Button } from 'react-bootstrap';
 
+//  Form for searching github username
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       value: '',
     };
-
+    //  function bindings
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -50,11 +51,9 @@ class SearchBar extends React.Component {
       })
       .then((results) => {
         let arrResults = JSON.parse(results);
-        console.log(arrResults);
         arrResults = arrResults.map((obj) => {
-          return obj.avatar_url;
-        })
-
+          return [obj.login, obj.avatar_url];
+        });
         this.props.setHandle(this.state.value); // updates githandle
         this.props.setFollowers(arrResults);
       })
